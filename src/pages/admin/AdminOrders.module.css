@@ -1,0 +1,189 @@
+.page { display: flex; flex-direction: column; gap: 16px; }
+
+.pageHeader { }
+.pageTitle {
+  font-family: var(--fd);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--adm-text);
+  margin-bottom: 4px;
+}
+.pageSubtitle { font-size: 14px; color: var(--adm-text2); }
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--adm-border);
+  background: var(--adm-bg2);
+  color: var(--adm-text2);
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.filterBtn:hover { border-color: rgba(108,99,255,0.4); color: var(--adm-text); }
+
+.filterActive {
+  background: rgba(108,99,255,0.15) !important;
+  border-color: rgba(108,99,255,0.4) !important;
+  color: var(--adm-accent2) !important;
+  font-weight: 600;
+}
+
+.filterCount {
+  background: var(--adm-bg3);
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 8px;
+  color: var(--adm-text2);
+}
+
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--adm-text2);
+  font-size: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 600px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+
+.orderCard {
+  background: var(--adm-bg2);
+  border: 1px solid var(--adm-border);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeIn 0.4s cubic-bezier(0.16,1,0.3,1) both;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cardNew {
+  border-color: rgba(245,158,11,0.35);
+  box-shadow: 0 0 0 1px rgba(245,158,11,0.1), 0 4px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.4s cubic-bezier(0.16,1,0.3,1) both, borderPulse 2s ease-in-out infinite;
+}
+
+@keyframes borderPulse {
+  0%, 100% { border-color: rgba(245,158,11,0.35); }
+  50% { border-color: rgba(245,158,11,0.6); }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cardLeft { display: flex; flex-direction: column; gap: 2px; }
+
+.cardTable {
+  font-family: var(--fd);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--adm-text);
+}
+
+.cardId { font-size: 11px; color: var(--adm-text2); letter-spacing: 0.5px; }
+
+.cardStatus {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 12px;
+  text-transform: capitalize;
+  flex-shrink: 0;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--adm-bg3);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.itemQtyBadge {
+  background: var(--adm-bg2);
+  border: 1px solid var(--adm-border);
+  padding: 1px 7px;
+  border-radius: 6px;
+  font-size: 11px;
+  color: var(--adm-text2);
+  flex-shrink: 0;
+}
+
+.itemName { flex: 1; color: var(--adm-text2); }
+.itemPrice { color: var(--gold); font-weight: 500; }
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardTotal { display: flex; flex-direction: column; gap: 1px; }
+.totalLabel { font-size: 10px; color: var(--adm-text2); text-transform: uppercase; letter-spacing: 1px; }
+.totalAmt { font-size: 18px; font-weight: 700; color: var(--gold); font-family: var(--fd); }
+.cardTime { font-size: 12px; color: var(--adm-text2); }
+
+.actions {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid var(--adm-border);
+  padding-top: 12px;
+}
+
+.printBtn {
+  flex: 1;
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: var(--adm-bg3);
+  border: 1px solid var(--adm-border);
+  color: var(--adm-text2);
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.printBtn:hover:not(:disabled) { background: rgba(255,255,255,0.05); color: var(--adm-text); }
+.printBtn:disabled { opacity: 0.5; }
+
+.statusBtn {
+  flex: 1;
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--color) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color) 40%, transparent);
+  color: var(--color);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s, transform 0.15s;
+}
+
+.statusBtn:hover { filter: brightness(1.2); transform: translateY(-1px); }
+.statusBtn:active { transform: scale(0.97); }
