@@ -14,7 +14,7 @@ export default function RootSelector() {
         <div className={styles.logo}>
           <div className={styles.logoIcon}>🌿</div>
           <h1 className={styles.brandName}>
-           Kings <span>Sparks</span>
+         Lotus <span></span>
           </h1>
           <p className={styles.brandSub}>Pure Veg A/C Family Restaurant</p>
         </div>
