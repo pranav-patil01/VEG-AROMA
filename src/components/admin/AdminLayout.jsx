@@ -25,7 +25,7 @@ export default function AdminLayout({ children }) {
         <div className={styles.sidebarHeader}>
           <div className={styles.logo}>
             <span className={styles.logoIcon}>🌿</span>
-            <span className={styles.logoText}>Lotus<span></span></span>
+            <span className={styles.logoText}>Kings Spark<span></span></span>
           </div>
           <div className={styles.adminBadge}>Admin Panel</div>
         </div>
